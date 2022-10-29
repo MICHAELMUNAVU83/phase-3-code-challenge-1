@@ -1,23 +1,15 @@
+require "pry"
+require_relative "./author.rb"
+require_relative "./magazine.rb"
 class Article
-    # Instance variables
-    attr_reader :author, :magazine, :title
-    # Class variables
-    @@all = []
-    # Instance methods
-    def initialize(author, magazine, title)
-        @author = author
-        @magazine = magazine
+
+    def initialize(title, author, magazine , magazine_category)
         @title = title
-        @@all << self
+        @author = Author.new(author)
+        @magazine = Magazine.new(magazine, magazine_category)
     end
-    # Class methods
-    def self.all
-        @@all
-    end
+
 
 end
-
-
-
-
-
+binding.pry
+0

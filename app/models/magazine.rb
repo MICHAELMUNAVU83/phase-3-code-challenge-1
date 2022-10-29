@@ -1,6 +1,6 @@
-require "pry"
+
 class Magazine 
-  attr_accessor :name, :category
+  attr_accessor :name , :category
   @@all = []
   def initialize(name , category)
     @name = name
@@ -11,6 +11,3 @@ class Magazine
     @@all
   end
 end
-
-binding.pry
-0

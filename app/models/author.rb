@@ -1,4 +1,4 @@
-require "pry"
+
 class Author 
   attr_reader :name
 
@@ -7,5 +7,3 @@ class Author
   end
 end
 
-binding.pry
-0
