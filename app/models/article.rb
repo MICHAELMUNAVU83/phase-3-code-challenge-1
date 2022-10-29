@@ -1,30 +1,23 @@
-
-require_relative "./magazine.rb"
-require_relative "./author.rb"
-class Article 
+class Article
+    # Instance variables
+    attr_reader :author, :magazine, :title
+    # Class variables
     @@all = []
-    attr_accessor :title, :author, :magazine
-   
+    # Instance methods
     def initialize(author, magazine, title)
-        @magazine = Magazine.new(magazine , "sports")
-        @author = Author.new(author)
+        @author = author
+        @magazine = magazine
         @title = title
         @@all << self
     end
-    def title
-        @title
-    end 
+    # Class methods
     def self.all
         @@all
     end
-    def author
-        @author
-    end
-    def magazine
-        @magazine
-    end
-        
 
 end
+
+
+
 
 
