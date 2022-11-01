@@ -1,14 +1,18 @@
-require_relative './article'
+require_relative './article.rb'
 
 class Author
-  # Instance variables
+  
   attr_reader :name
-  # Class Variables
+ 
   @@all = []
-  # Instance methods
+  
   def initialize(name)
     @name = name
     @@all << self
+  end
+
+  def self.all
+    @@all
   end
 
   def articles
@@ -19,17 +23,16 @@ class Author
     self.articles.map {|article| article.magazine}.uniq
   end
 
+  def topic_areas
+    self.magazines.map {|magazine|magazine.category}.uniq
+  end
+
   def add_article(magazine, title)
     Article.new(self, magazine, title)
   end
 
-  def topic_areas
-      self.magazines.map {|magazine|magazine.category}.uniq
-  end
-  # Class methods
-  def self.all
-    @@all
-  end
+  
+
  
   
 end

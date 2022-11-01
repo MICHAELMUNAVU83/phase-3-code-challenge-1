@@ -1,15 +1,18 @@
-require_relative './article'
+require_relative './article.rb'
 
 class Magazine 
-  # Instance variables
-  attr_accessor :name, :category
-  # Class variables
+  attr_accessor :name, :category 
   @@all = []
-  # Instance methods
+ 
   def initialize(name, category)
     @name = name
     @category = category
     @@all << self
+  end
+
+
+  def self.all
+    @@all
   end
 
   def articles
@@ -25,10 +28,7 @@ class Magazine
   end
 
  
-  # Class methods
-  def self.all
-    @@all
-  end
+
 
   def self.find_by_name(name)
     self.all.find {|magazine| magazine.name == name}
