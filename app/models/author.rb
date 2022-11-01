@@ -25,8 +25,8 @@ class Author
 
 
 
-  def add_article(title, magazine_name, magazine_category)
-    Article.new(title, self, magazine_name, magazine_category)
+  def add_article(title, magazine)
+    Article.new(title, self, magazine)
   end
    
   # Returns a **unique** array of strings with the categories of the magazines the author has contributed to
