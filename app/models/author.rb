@@ -1,6 +1,8 @@
 
 require_relative "./article.rb"
 
+
+
 class Author 
   attr_reader :name
 

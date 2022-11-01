@@ -14,7 +14,7 @@ class Magazine
   # Returns an array of Author instances who have written for this magazine
   def contributors
     Article.all.select do |article|
-      article.magazine.name == self.name && article.magazine.category == self.category
+      article.magazine == self
     end.map do |article|
       article.author
     end
@@ -29,8 +29,8 @@ class Magazine
   #  Returns an array strings of the titles of all articles written for that magazine
 
   def article_titles
-    Article.all.select do |article|
-      article.magazine.name == self.name && article.magazine.category == self.category
+    Article.all.filter do |article|
+      article.magazine == self
     end.map do |article|
       article.title
     end
